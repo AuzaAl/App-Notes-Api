@@ -1,0 +1,108 @@
+:root{
+    --primary-color:#101010;
+    --card-color:#161616;
+    --border-color:#262626;
+    --text-color:rgb(249, 249, 249);
+    --darker-text-color:rgb(227, 227, 227);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background-color: var(--primary-color);
+}
+
+
+body{
+    background-color: #101010;
+    opacity: 1;
+    background-image: radial-gradient(#212121 0.8px, #101010 0.8px);
+    background-size: 16px 16px;
+}
+
+/* laoding */
+.loading-indicator {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(8, 8, 8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid #e7e7e7;
+    border-top-color: #33333300;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+/* notes container*/
+#notes-container {
+    padding: 20px;
+    width: 1000px;
+    margin: 0 auto;
+    column-gap: 16px;
+    column-width: 250px;
+}
+
+note-card {
+    display: grid;
+    margin-bottom: 16px;
+    break-inside: avoid; /* Mencegah card terpotong antar kolom */
+}
+
+/* Responsif untuk layar kecil */
+@media (min-width: 1750px) {
+    #notes-container {
+        width: 1700px;
+        column-count: 5; 
+    }
+}
+
+@media (max-width: 1749px) {
+    #notes-container {
+        width: 1350px;
+        column-count: 4; 
+    }
+}
+
+@media (max-width: 1360px) {
+    #notes-container {
+        width: 1000px;
+        column-count: 3; 
+    }
+}
+
+@media (max-width: 1040px) {
+    #notes-container {
+        width: 660px;
+        column-count: 2; 
+    }
+}
+
+@media (max-width: 715px) {
+    #notes-container {
+        width: 85%;
+        column-count: 1;
+    }
+}
+
+
